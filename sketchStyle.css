@@ -1,6 +1,10 @@
 body {
-    background: #000;
-    margin:7% 0; 
-    padding:0;
-    text-align:center;
-}
+    background-color: #000;
+    position: absolute;
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    margin: 5% 5% 5% 5%;
+    padding: 5% 5% 5% 5%;
+    border: 5% 5% 5% 5%;
+} 
