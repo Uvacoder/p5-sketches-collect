@@ -1,5 +1,7 @@
 body {
     background: #000;
+    margin: auto;
     padding: 5%;
-    align-items: center;
+    display: flex;
+    justify-content: center;
 }
