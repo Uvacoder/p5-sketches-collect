@@ -16,7 +16,7 @@ let hinc = 0.002;    // Hue increase per frame
 /** Setup dimensions, create new particles and initialize
  *  flowfield as a 2-dimensional array of empty vectors. */
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(windowWidth, windowHeight);
   cols = width / scl;
   rows = height / scl;
   for (let i = 0; i < count; i++) {
@@ -28,6 +28,7 @@ function setup() {
       flowfield[x][y] = createVector(0, 0);
     }
   }
+  background(0);
 }
 
 function draw() {
