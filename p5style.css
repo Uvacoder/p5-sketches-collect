@@ -1,10 +1,74 @@
-body { background-color: #111; position: relative; justify-content:center; align-items:center; text-align: center; padding: 5%; border: 5%; } 
-div { padding: 2%; border: 2%; }
-a, h, p, h2 { font-family: "Helvetica"; }
-h  { font-size: 2.5em; color: #FFF; font-weight: 600; }
-h2 { font-size: 1.5em; color: #FFF; font-weight: 600; }
-p  { font-size: 1.0em; color: #FFF; font-weight: 300; }
-a:link    { color: #FFF; text-decoration: none; }
-a:visited { color: #FFF; text-decoration: none; }
-a:hover   { color: #CCC; text-decoration: none; }
-a:active  { color: #77F; text-decoration: none; }
+
+/* All fonts */
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* The main body. */
+body {
+    background-color: #181818;
+    text-align: center;
+    margin: 0;
+}
+
+/* The header. */
+.header {
+    background-color: #993333;
+    padding: 30px;
+}
+
+/* The footer. */
+.footer {
+    padding-top: 3%;
+    vertical-align: bottom;
+    font-size: 0.9em;
+    color: #555;
+}
+.footlink {
+    text-decoration: underline;
+    color: #666;
+}
+
+/* The links */
+.links {
+    background-color: #111;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-left: 40%;
+    border-right: 40%;
+}
+.linkbox {
+    display: inline-block;
+    width: 35%;
+    min-width: 300px;
+}
+.link {
+    border-radius: 40px;
+    background-color: #222;
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #FFF;
+    text-decoration: none;
+    padding: 15px;
+    margin: 20px;
+    display: block;
+}
+.link:hover {
+    background-color: #333;
+}
+.link:active {
+    background-color: #444;
+}
+
+/* Titles */
+.title {
+    color: #FFF;
+    font-weight: 600;
+    margin: 0;
+}
+h1.title { 
+    font-size: 2.5em;
+}
+h2.title  {
+    font-size: 1.0em;
+}

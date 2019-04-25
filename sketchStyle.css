@@ -1,8 +1,11 @@
 body {
     background-color: #000;
-    position: relative;
-    text-align: center;
     padding-top: 5%;
-    margin-left: 0;
-    margin-right: auto;
-} 
+    text-align: center;
+}
+.p5Canvas {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+}
