@@ -19,10 +19,13 @@ body {
 
 /* The footer. */
 .footer {
-    padding-top: 3%;
+    padding: 30px;
     vertical-align: bottom;
     font-size: 0.9em;
     color: #555;
+}
+.footnote {
+    margin: 3px;
 }
 .footlink {
     text-decoration: underline;
@@ -41,6 +44,11 @@ body {
     display: inline-block;
     width: 35%;
     min-width: 300px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 .link {
     border-radius: 40px;
