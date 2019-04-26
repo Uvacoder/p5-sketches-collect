@@ -1,5 +1,5 @@
 /** Constants: speed of light, gravitational constant and the mass of the black hole */
-let c = 31;
+let c = 30.69;
 let G = 2;
 let mass = 5000;
 
@@ -17,11 +17,11 @@ let dt = 0.1;
 function setup() {
 
   /** Create a canvas and initialize it with a black background */
-  createCanvas(windowWidth, 600);
+  createCanvas(800, 600);
   background(0);
 
   /** Calculate the 'timelimit' for the lightrays' colors */
-  timelimit = 8 * width * dt / c;
+  timelimit = 640 / c;
 
   /** Create each photon */
   for (let h = 0; h <= height; h += spacing) {
@@ -83,7 +83,7 @@ class Photon {
   /** Function to draw the photon as a line between its current and previous position */
   show() {
     let t = time / timelimit; // Adjust colors according to the time
-    strokeWeight(0.5);
+    strokeWeight(0.8);
     stroke(255 * t, 255 * t, 100 * t);
     line(this.prev.x, this.prev.y, this.pos.x, this.pos.y);
   }
@@ -109,9 +109,9 @@ class Blackhole {
 
   /** Function to draw the black hole as a circle */
   show() {
-    noStroke();
     for (let r = this.R; r > 0; r -= 1) {
       let sin = Math.sin(0.2 * time - 0.2 * r)
+      stroke(255 * sin, 0, 255 * (1 - sin));
       fill(20 * sin * sin, 0, 50 * sin * sin);
       circle(this.pos.x, this.pos.y, 2 * r);
     }
