@@ -23,26 +23,18 @@ body {
     height: 100vh;
 }
 #header h1 {
-    padding: 2px 50px;
     position: absolute;
     font-size: 5rem;
-    top: 35%;
+    bottom: 35%;
     left: 10%;
     z-index: -8; 
-    border-width: 1px 0 0 0;
-    border-style: solid;
-    border-color: white; 
 }
 #header h2 {
     position: absolute;
     font-size: 1.5rem;
-    top: 52%;
-    left: 15%;
+    bottom: 37%;
+    left: 16%;
     z-index: -8;
-    padding: 10px 50px;
-    border-width: 0 0 1px 0;
-    border-style: solid;
-    border-color: white; 
 }
 #header-image {
     object-fit: cover;
@@ -157,16 +149,23 @@ body {
 }
 
 
-/** GRID ADJUSTMENTS */
+/** ADJUSTMENTS FOR SMALLER SCREENS AND MOBILE */
 @media (max-width: 1000px) {
     #links {
         grid-template: ". ." 1fr ". ." 1fr ". ." 1fr ". ." 1fr / 1fr 1fr;
         height: calc(4 * 100px);
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     #links {
         grid-template: "." "." "." "." "." "." "." ".";
         height: calc(8 * 100px);
+    }
+    #header h1 {
+        font-size: 2rem;
+    }
+    #header h2 {
+        font-size: 1.0rem;
+        bottom: 34%;
     }
 }

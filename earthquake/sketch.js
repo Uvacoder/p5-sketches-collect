@@ -19,6 +19,10 @@ function preload() {
 /** Setting up canvas */
 function setup() {
 
+    /** Deleting loading text */
+    var element = document.getElementById("load");
+    element.parentNode.removeChild(element);
+
     /** Translating and drawing the map */
     createCanvas(w, h);
     translate(w / 2, h / 2);
