@@ -6,25 +6,25 @@
 body {
     background-color: #000;
     padding-top: 5%;
-    text-align: center;
-    border: 0%;
-    margin: 0%;
-    display: flex;
-    flex-flow: column;
+    display: grid;
+    grid-template: "a" "b";
+    place-items: center center;
 }
 #defaultCanvas0 {
     margin: 0;
     border: 0;
     padding: 0;
-    order: 1;
+    grid-area: a;
 }
 #controls {
     display: inline-grid;
     grid-template-columns: 0.7fr 1fr;
     grid-template-rows: repeat(5, 30px);
     text-align: left;
-    order: 2;
+    grid-area: b;
     width: 250px;
+    align-items: center;
+    grid-gap: 5px 0;
 }
 #controls h1 {
     grid-area: 1 / 1 / span 2 / span 2;
