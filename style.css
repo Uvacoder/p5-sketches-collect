@@ -1,74 +1,48 @@
-
-
-/** MAIN STYLING */
-
 * {
     font-family: 'Ubuntu', sans-serif;
     scroll-behavior: smooth;
     color: white;
     text-decoration: none;
+    z-index: 10;
 }
 body {
     margin: 0;
-}
-::-webkit-scrollbar { 
-    display: none; 
+    display: grid;
+    grid-template: "header" "middle" "content" "footer";
 }
 
-/** HEADER STYLING */
+/** Disable scrollbars */
+::-webkit-scrollbar { display: none; }
 
-
-#header {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    height: 100vh;
-}
-#header h1 {
-    position: absolute;
-    font-size: 5rem;
-    bottom: 35%;
-    left: 10%;
-    z-index: -8; 
-}
-#header h2 {
-    position: absolute;
-    font-size: 1.5rem;
-    bottom: 37%;
-    left: 16%;
-    z-index: -8;
-}
-#header-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-    z-index: -10;
+/** Static background image on bottom */
+#background-image {
     position: fixed;
+    z-index: 0;
 }
-#header::before {
-    content: '';
-    width: 100%;
+
+/** Header container with see-through gradient background */
+#header {
+    grid-area: header;
     height: 100vh;
     background: linear-gradient(120deg, rgba(255,106,0,0.9), rgba(255,0,203,0.5));
+    z-index: 1;
+}
+
+/** Header logo */
+#logo { position: absolute; top: 40vh; margin: 5vw; }
+#logo * { margin: 0 5vw; }
+#logo h1 { font-size: 6vw; }
+#logo h2 { font-size: 2vw; font-weight: 100; margin-left: 10vw; }
+
+/** Scrolling link and its hover animation */
+#header-scroll {
+    bottom: 40px;
+    left: calc(50% - 20px);
+    position: fixed;
+}
+#header-scroll::before {
+    content: '';
     position: absolute;
-    transition: opacity 200ms ease-in-out;
-    z-index: -9;
-}
-#header-link {   
-    left: calc(50% - 20px);
-    bottom: 40px;
-    height: 40px;
-    width: 40px;
-}
-#header-button {
-    left: calc(50% - 20px);
-    bottom: 40px;
-    z-index: -7;
-    position: fixed;
-}
-#header-link::before {
-    content: '';  
-    left: calc(50% - 20px);
-    bottom: 40px;
-    position: fixed;
     background-color: white;
     width: 40px;
     height: 40px;
@@ -76,96 +50,93 @@ body {
     border-radius: 50%;
     transition: opacity 80ms ease-out;
 }
-#header-link:hover::before {
-    opacity: 0.3;
+#header-scroll:hover::before { opacity: 0.3; }
+
+/** Links on top of header side by side in #toplinks container with hover animation */
+#toplinks {
+    position: absolute;
+    margin: 20px;
+    right: 0;
 }
+#toplinks * {
+    display: inline-block;
+    font-size: 0.8rem;
+    padding: 0.7rem;
+    opacity: 0.8;
+    margin: 0.2rem;
+}
+.toplink {
+    border-radius: 20px;
+    background-color: rgba(255,255,255,0.2);
+    transition: background-color 100ms ease-out;
+}
+.toplink:hover { background-color: rgba(255,255,255,0.4); }
 
-/** MIDDLE STYLING */
-
+/** Middle section with extra info */
 #middle {
     background-color: white;
     text-align: left;
     padding: 30px 8%;
-    font-size: 0.9rem; 
+    grid-area: middle;
 }
-#middle h1 {
+#middle * {
     color: black;
     opacity: 0.8;
+    margin: 5px;
 }
-#middle h2 {
-    color: black;
-    opacity: 0.8;
-    font-size: 0.9rem;
-    margin-top: -5px;
-}
+#middle h1 { font-size: 1.4rem; }
+#middle h2 { font-size: 0.9rem; }
 
-/** LINKS CONTENT STYLING */
-
+/** Content with link buttons to animations */
 #links {
-    padding: 6rem 5%;
-    text-align: center;
-    display: inline-grid;
-    grid-template: ". . ." 1fr ". . ." 1fr ". . ." 1fr / 1fr 1fr 1fr;
-    grid-gap: 1rem;
     background-color: #F2F2F2;
-    width: 90%;
-    height: calc(3*100px);
+    display: grid;
+    place-items: center;
 }
+
+/** Subgrid for links */
+#link-container {
+    margin: 4rem 0;
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    place-items: center;
+    grid-gap: 1rem;
+    width: 80%;
+}
+
+/** Single link button */
 .link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FF1D3F;
-    height: 100%;
-    color: white;
-    opacity: 0.8;
+    display: grid;
+    place-items: center;
+    background-color: rgba(255, 29, 63, 0.8);
+    height: 80px;
+    width: 100%;
     font-size: 1.3rem;
     font-weight: 800;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 500ms ease-out, height 500ms ease-out;
+    transition-property: background-color, width, box-shadow;
+    transition-timing-function: ease-out;
+    transition-duration: 400ms;
 }
 .link:hover {
-    background-color: #FF6F6C;
-    height: 110%;
-    transition: background-color 200ms ease-out, height 200ms ease-out;
+    background-color: rgba(255, 29, 63, 1);
+    width: 105%;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+    transition-duration: 100ms;
 }
 
-/** FOOTER STYLING */
-
+/** Simple footer with text and links */
 #footer {
+    grid-area: footer;
     background-color: white;
     text-align: center;
     padding: 30px;
     font-size: 0.9rem;
-}
-.footnote {
+    line-height: 1.3rem;
     color: #AAA;
-    margin: 0.2rem;
 }
 .footlink {
     color: #999;
     text-decoration: underline;
-}
-
-
-/** ADJUSTMENTS FOR SMALLER SCREENS AND MOBILE */
-@media (max-width: 1000px) {
-    #links {
-        grid-template: ". ." 1fr ". ." 1fr ". ." 1fr ". ." 1fr / 1fr 1fr;
-        height: calc(4 * 100px);
-    }
-}
-@media (max-width: 700px) {
-    #links {
-        grid-template: "." "." "." "." "." "." "." ".";
-        height: calc(8 * 100px);
-    }
-    #header h1 {
-        font-size: 2rem;
-    }
-    #header h2 {
-        font-size: 1.0rem;
-        bottom: 34%;
-    }
 }

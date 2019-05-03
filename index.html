@@ -9,31 +9,41 @@
   </head>
   <body>
     <section id="header">
-        <h1>P5.JS Animations</h1>
-        <h2>By Jussi Nevavuori</h2>
-        <a href=#middle id="header-link"><img src="assets/scroll-button-image.png" id="header-button"></a>
-        <img src="assets/bg.jpg" id="header-image">
+        <div id="toplinks">
+          <p>More links to my work:</p>
+          <a href="https://nevavuori.myportfolio.com/gallery" class="toplink" id="toplink-portfolio">Graphic Design Portfolio</a>
+          <a href="https://github.com/Jussinevavuori" class="toplink" id="toplink-portfolio">GitHub Portfolio</a>
+        </div>
+        <div id="logo">
+          <h1>P5.JS Animations</h1>
+          <h2>By Jussi Nevavuori</h2>
+        </div>
+        <a href=#middle id="header-scroll"><img src="assets/scroll-button-image.png" id="header-scroll-button"></a>
     </section>
     <section id="middle">
       <h1>P5.js Animations</h1>
       <h2>Jussi Nevavuori</h2>
     </section>
     <section id="links">
-      <a href="timestable/index.html"     class="link">Circular Timestable</a>
-      <a href="fractaltree/index.html"    class="link">Binary Fractal Tree</a>
-      <a href="10print/index.html"        class="link">10print Pattern</a>
-      <a href="mazegeneration/index.html" class="link">Maze Generation</a>
-      <a href="flowfield/index.html"      class="link">Flow Field</a>
-      <a href="blackhole/index.html"      class="link">Black Hole</a>
-      <a href="earthquake/index.html"     class="link">Earthquake Data</a>
-      <a href="7segment/index.html"       class="link">7-Segment Counter</a>
-      <a href="raycasting3d/index.html"       class="link">3D Ray Casting</a>
+      <div id="link-container">
+        <a class="link" href="stringloop/index.html">Loop Generator</a>
+        <a class="link" href="raycasting3d/index.html">3D Ray Casting</a>
+        <a class="link" href="mazegeneration/index.html">Maze Generation</a>
+        <a class="link" href="timestable/index.html">Circular Timestable</a>
+        <a class="link" href="earthquake/index.html">Earthquake Data</a>
+        <a class="link" href="blackhole/index.html">Black Hole</a>
+        <a class="link" href="flowfield/index.html">Flow Field</a>
+        <a class="link" href="10print/index.html">10print Pattern</a>
+        <a class="link" href="7segment/index.html">7-Segment Counter</a>
+        <a class="link" href="fractaltree/index.html">Binary Fractal Tree</a>
+        <a class="link" href="quicksort/index.html">Quicksort</a>
     </section>
     <section id="footer">
-        <p class="footnote">Jussi Nevavuori (C) 2019</p>
-        <p class="footnote">JavaScript practice using the <a class="footlink" href="https://p5js.org">p5.js library</a></p>
-        <p class="footnote"><a class="footlink" href="https://github.com/Jussinevavuori/p5-sketches">Source Code</a> at GitHub</p>
-        <p class="footnote">Credit to <a class="footlink" href="https://shiffman.net/">Daniel Shiffman</a></p>
+        Jussi Nevavuori (C) 2019<br>
+        JS Practice using the <a class="footlink" href="https://p5js.org">p5.js library</a><br>
+        <a class="footlink" href="https://github.com/Jussinevavuori/p5-sketches">Source Code</a> at GitHub<br>
+        Credit to <a class="footlink" href="https://shiffman.net/">Daniel Shiffman</a>
     </section>
+    <element id="background-image"><img src="assets/bg.jpg" id="header-image"></element>
   </body>
 </html>
