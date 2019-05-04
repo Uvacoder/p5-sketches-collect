@@ -1,7 +1,7 @@
 
 
 /** Set to true to generate animation styling to console */
-if (true) {
+if (false) {
 
     /** Functions to simplify syntax of creating elements */
     function open(selector, tab) {
