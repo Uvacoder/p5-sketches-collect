@@ -1,46 +1,57 @@
-* {
+*
+{
     font-family: 'Ubuntu', sans-serif;
     scroll-behavior: smooth;
     color: white;
     text-decoration: none;
     z-index: 10;
 }
-body {
+body
+{
     margin: 0;
     display: grid;
     grid-template: "header" "middle" "content" "footer";
 }
 
 /** Disable scrollbars */
-::-webkit-scrollbar { display: none; }
+::-webkit-scrollbar
+{
+    display: none;
+}
 
 /** Static background image on bottom */
-#background-image {
+#background-image
+{
     position: fixed;
     z-index: 0;
 }
 
 /** Header container with see-through gradient background */
-#header {
+#header
+{
     grid-area: header;
     height: 100vh;
     background: linear-gradient(120deg, rgba(255,106,0,0.9), rgba(255,0,203,0.5));
     z-index: 1;
 }
 
-/** Header logo */
-#logo { position: absolute; top: 40vh; margin: 5vw; }
-#logo * { margin: 0 5vw; }
-#logo h1 { font-size: 6vw; }
-#logo h2 { font-size: 2vw; font-weight: 100; margin-left: 10vw; }
-
-/** Scrolling link and its hover animation */
-#header-scroll {
+/** Scrolling link and its hover and bobbing animation */
+#header-scroll
+{
     bottom: 40px;
     left: calc(50% - 20px);
     position: fixed;
+    animation: bob 2.5s infinite;
+    
 }
-#header-scroll::before {
+@keyframes bob 
+{
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(10px); }
+    100% {transform: translateY(0px); }
+}
+#header-scroll::before
+{
     content: '';
     position: absolute;
     background-color: white;
@@ -50,52 +61,70 @@ body {
     border-radius: 50%;
     transition: opacity 80ms ease-out;
 }
-#header-scroll:hover::before { opacity: 0.3; }
+#header-scroll:hover::before
+{
+    opacity: 0.3;
+}
 
 /** Links on top of header side by side in #toplinks container with hover animation */
-#toplinks {
+#toplinks
+{
     position: absolute;
     margin: 20px;
-    right: 0;
 }
-#toplinks * {
+#toplinks *
+{
     display: inline-block;
     font-size: 0.8rem;
     padding: 0.7rem;
     opacity: 0.8;
     margin: 0.2rem;
 }
-.toplink {
+.toplink
+{
     border-radius: 20px;
     background-color: rgba(255,255,255,0.2);
     transition: background-color 100ms ease-out;
 }
-.toplink:hover { background-color: rgba(255,255,255,0.4); }
+.toplink:hover
+{
+    background-color: rgba(255,255,255,0.4);
+}
 
 /** Middle section with extra info */
-#middle {
+#middle
+{
     background-color: white;
     text-align: left;
     padding: 30px 8%;
     grid-area: middle;
 }
-#middle * {
+#middle *
+{
     color: black;
     opacity: 0.8;
     margin: 5px;
 }
-#middle h1 { font-size: 1.4rem; }
-#middle h2 { font-size: 0.9rem; }
+#middle h1
+{
+    font-size: 1.4rem;
+}
+#middle h2
+{
+    font-size: 0.9rem;
+}
 
 /** Content with link buttons to animations */
-#links {
+#links
+{
     background-color: #F2F2F2;
     display: grid;
     place-items: center;
 }
 
 /** Subgrid for links */
-#link-container {
+#link-container
+{
     margin: 4rem 0;
     display: inline-grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, auto));
@@ -105,7 +134,8 @@ body {
 }
 
 /** Single link button */
-.link {
+.link
+{
     display: grid;
     place-items: center;
     background-color: rgba(255, 29, 63, 0.8);
@@ -119,7 +149,8 @@ body {
     transition-timing-function: ease-out;
     transition-duration: 400ms;
 }
-.link:hover {
+.link:hover
+{
     background-color: rgba(255, 29, 63, 1);
     width: 105%;
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
@@ -127,7 +158,8 @@ body {
 }
 
 /** Simple footer with text and links */
-#footer {
+#footer
+{
     grid-area: footer;
     background-color: white;
     text-align: center;
@@ -136,7 +168,35 @@ body {
     line-height: 1.3rem;
     color: #AAA;
 }
-.footlink {
+.footlink
+{
     color: #999;
     text-decoration: underline;
 }
+
+#logo { 
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+/** Header logo animation (generated with app.js) */
+#paths path:nth-child(1)  { stroke-dasharray: 206.0558; stroke-dashoffset: 206.0558; stroke-linecap: round; animation: draw-in 1s 0.00s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(2)  { stroke-dasharray: 264.6008; stroke-dashoffset: 264.6008; stroke-linecap: round; animation: draw-in 1s 0.10s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(3)  { stroke-dasharray: 268.1514; stroke-dashoffset: 268.1514; stroke-linecap: round; animation: draw-in 1s 0.20s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(4)  { stroke-dasharray: 268.1579; stroke-dashoffset: 268.1579; stroke-linecap: round; animation: draw-in 1s 0.30s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(5)  { stroke-dasharray: 132.8800; stroke-dashoffset: 132.8800; stroke-linecap: round; animation: draw-in 1s 0.40s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(6)  { stroke-dasharray: 308.4205; stroke-dashoffset: 308.4205; stroke-linecap: round; animation: draw-in 1s 0.50s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(7)  { stroke-dasharray: 300.7200; stroke-dashoffset: 300.7200; stroke-linecap: round; animation: draw-in 1s 0.60s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(8)  { stroke-dasharray: 240.5335; stroke-dashoffset: 240.5335; stroke-linecap: round; animation: draw-in 1s 0.70s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(9)  { stroke-dasharray: 264.8547; stroke-dashoffset: 264.8547; stroke-linecap: round; animation: draw-in 1s 0.80s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(10) { stroke-dasharray: 240.4964; stroke-dashoffset: 240.4964; stroke-linecap: round; animation: draw-in 1s 0.90s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(11) { stroke-dasharray: 264.5779; stroke-dashoffset: 264.5779; stroke-linecap: round; animation: draw-in 1s 1.00s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(12) { stroke-dasharray: 282.0822; stroke-dashoffset: 282.0822; stroke-linecap: round; animation: draw-in 1s 1.10s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(13) { stroke-dasharray: 295.9926; stroke-dashoffset: 295.9926; stroke-linecap: round; animation: draw-in 1s 1.20s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+#paths path:nth-child(14) { stroke-dasharray: 133.0000; stroke-dashoffset: 133.0000; stroke-linecap: round; animation: draw-in 1s 1.30s ease-out forwards, fill-in 2s ease forwards 1.30s; }
+.cls-2 { animation: fill-in 0.7s ease forwards 0.5s, pop-up 1s ease forwards 0.5s; }
+@keyframes draw-in { to { stroke-dashoffset: 0; } }
+@keyframes fill-in { from { fill: transparent; } to { fill: white; } }
+@keyframes pop-up { from { transform: translateY(50px); } to { transform: translateY(0); } }
