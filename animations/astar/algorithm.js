@@ -8,6 +8,7 @@ function calculateCost(x1, y1, x2, y2) {
 	return diagonals + straights;
 }
 
+
 function astar() {
 
 	if (finished) {

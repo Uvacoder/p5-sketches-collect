@@ -1,0 +1,19 @@
+{
+  "name": "p5-sketches",
+  "version": "1.0.0",
+  "description": "https://jussinevavuori.github.io/p5-sketches/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jussinevavuori/p5-sketches.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jussinevavuori/p5-sketches/issues"
+  },
+  "homepage": "https://github.com/Jussinevavuori/p5-sketches#readme"
+}
